@@ -76,9 +76,25 @@
     text-align: justify;
     size: 12px;
 }
-
-.distKerala h2{
+.distKerala{
+    padding: 5%;
+}
+h2{
     color: #00264C;
      text-align: center;
      padding: 30px;
 }
+.aboutDistrict{
+    background-color: #E3E7F1;
+    padding: 5%;
+}
+.aboutDistrict h1{
+    color: #00264C;
+    text-align: center;
+    padding: 3%;
+}
+.aboutDistrict p{
+    padding: 0 5% 5% 5%;
+    text-align: justify;
+}
+
