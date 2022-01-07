@@ -127,4 +127,8 @@ height: 5%;
 padding: 1%;
 }
 
-
+.imgsize{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
