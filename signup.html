@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
       <!-- Bootstrap CSS -->
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
 
@@ -93,58 +93,65 @@
   
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
                     
-                  <form class="mx-1 mx-md-4">
+                  <form class="mx-1 mx-md-4" action="login.html"  onsubmit="return validate_signup()">
   
                     <div class="d-flex flex-row align-items-center mb-4">
-                      <!-- <i class="fas fa-user fa-lg me-3 fa-fw"></i> -->
                       <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example1c">Enter your name</label>
-                        <input type="text" id="form3Example1c" class="form-control" />
+                        <label class="form-label" for="username" >Enter your name</label>
+                        <input type="text" id="username" placeholder="Enter your name" class="form-control" />
+                        <label class="form-label" id="error_n" for="error"></label>
+                       
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="phone" >Enter your phone number</label>
+                        <input type="text" id="phno" placeholder="Enter your phone number" class="form-control" />
+                        <label class="form-label" id="error_ph" for="error"></label>
                        
                       </div>
                     </div>
   
                     <div class="d-flex flex-row align-items-center mb-4">
-                      <!-- <i class="fas fa-envelope fa-lg me-3 fa-fw"></i> -->
                       <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example3c">Enter your email</label>
-                        <input type="email" id="form3Example3c" class="form-control" />
-                      
+                        <label class="form-label" for="email">Enter your email</label>
+                        <input type="text" id="email" class="form-control" placeholder="Enter your email"/>
+                        <label class="form-label" id="error_e" for="error"></label>
                       </div>
                     </div>
   
                     <div class="d-flex flex-row align-items-center mb-4">
-                      <!-- <i class="fas fa-lock fa-lg me-3 fa-fw"></i> -->
                       <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example4c">Enter your password</label>
-                        <input type="password" id="form3Example4c" class="form-control" />
-                     
+                        <label class="form-label" for="password">Enter your password</label>
+                        <input type="password" id="pwd" class="form-control" placeholder="Enter your password"/>
+                        <label class="form-label" id="error_p" for="error"></label>
+                        <br>
+        <span id="StrengthDisp" class="badge displayBadge"></span>
                       </div>
                     </div>
   
                     <div class="d-flex flex-row align-items-center mb-4">
-                      <!-- <i class="fas fa-key fa-lg me-3 fa-fw"></i> -->
                       <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example4cd">Repeat your password</label>
-                        <input type="password" id="form3Example4cd" class="form-control" />
-                      
+                        <label class="form-label" for="repeatpwd">Repeat your password</label>
+                        <input type="password" id="repeatpwd" class="form-control" placeholder="Enter your password again" />
+                        <label class="form-label" id="error_rp" for="error"></label>
                       </div>
                     </div>
                    
-                    <div class="form-check d-flex  mb-5">
+                    <!-- <div class="form-check d-flex  mb-5">
                       <input
                         class="form-check-input me-2"
                         type="checkbox"
-                        value=""
-                        id="form2Example3cg"
+                        id="checkbox"
                       />
                       <label class="form-check-label" for="form2Example3g">
                         I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
                       </label>
-                    </div>
+                    </div> -->
   
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="button" class="btn btn-primary btn-lg">Sign Up</button>
+                      <button id="submit" class="btn btn-primary btn-lg">Sign Up</button>
                     </div>
   
                   </form>
@@ -163,8 +170,7 @@
 </div>
   <!--form 2 end-->
   <!-- </div> -->
-</body>
-       <!-- Footer -->
+        <!-- Footer -->
 <footer class="page-footer font-small stylish-color-dark pt-4">
 
   <!-- Footer Links -->
@@ -328,4 +334,7 @@
 
 </footer>
       <!--footer end-->
+      <script src="JS/form.js"></script>
+</body>
+ 
 </html> 

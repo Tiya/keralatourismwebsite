@@ -166,3 +166,8 @@ p{
   background: #cb2027;
   color: white;
 }
+.displayBadge{
+  margin-top: 5%; 
+  display: none; 
+  text-align :center;
+}

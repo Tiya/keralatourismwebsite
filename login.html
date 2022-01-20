@@ -12,8 +12,9 @@
       <!-- Bootstrap CSS -->
 
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+     
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
 
@@ -93,53 +94,38 @@
   
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Log In</p>
   
-                  <form class="mx-1 mx-md-4">
+                  <form class="mx-1 mx-md-4"  action="index.html"  onsubmit="return validate_login()">
   
                     <div class="d-flex flex-row align-items-center mb-4">
-                      <!-- <i class="fas fa-user fa-lg me-3 fa-fw"></i> -->
                       <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example1c">Enter your name</label>
-                        <input type="text" id="form3Example1c" class="form-control" />
-                       
+                        <label class="form-label">Enter your email</label>
+                        <input type="text" placeholder="Enter your email" id="email" class="form-control">
+                        <label class="form-label" id="error_e" for="error"></label>
                       </div>
                     </div>
-  
+
                     <div class="d-flex flex-row align-items-center mb-4">
-                      <!-- <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span> -->
                       <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example3c">Enter your email</label>
-                        <input type="email" id="form3Example3c" class="form-control" />
-                      
+                        <label class="form-label">Enter your password</label>
+                        <input type="password" id="pwd" placeholder="Enter your password" class="form-control" />
+                        <label class="form-label" id="error_p" for="error"></label>
                       </div>
                     </div>
-  
                     <div class="d-flex flex-row align-items-center mb-4">
-                      <!-- <i class="fas fa-lock fa-lg me-3 fa-fw"></i> -->
                       <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example4c">Enter your password</label>
-                        <input type="password" id="form3Example4c" class="form-control" />
-                     
+                        <p><input type="checkbox" name="terms"> Remember me</u></p>
+                        <label class="form-check-label" style="float: right;" for="ForgotPassword">
+                        <a href="#!" >Forgot password?</a>
+                        </label>
                       </div>
                     </div>
-  
+                    
                    
-                   
-                    <div class="form-check d-flex  mb-5">
-                      <input
-                        class="form-check-input me-2"
-                        type="checkbox"
-                        value=""
-                        id="form2Example3cg"
-                      />
-                      <label class="form-check-label" for="form2Example3g">
-                        I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
-                      </label>
-                    </div>
-  
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="button" class="btn btn-primary btn-lg">Log In</button>
+                      <button id="submit" class="btn btn-primary btn-lg">Log In</button>
                     </div>
-  
+                    
+                   
                   </form>
   
                 </div>
@@ -153,169 +139,171 @@
   </section>
   <!--form 2 end-->
   <!-- </div> -->
-</body>
-      <!-- Footer -->
-      <footer class="page-footer font-small stylish-color-dark pt-4">
+  <!-- Footer -->
+  <footer class="page-footer font-small stylish-color-dark pt-4">
 
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left">
-      
-          <!-- Grid row -->
-          <div class="row">
-      
-            <!-- Grid column -->
-            <div class="col-md-4 mx-auto">
-      
-              <!-- Content -->
-              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Kerala Tourism</h5>
-              <p>A Welcoming Destination Where Nature, Beaches, Backwaters, Ayurveda, and Culture Await You.</p>
-            </div>
-            <!-- Grid column -->
-      
-            <hr class="clearfix w-100 d-md-none">
-      
-            <!-- Grid column -->
-            <div class="col-md-2 mx-auto">
-      
-              <!-- Links -->
-              <h6 class="font-weight-bold text-uppercase mt-3 mb-4">Kerala Destinations</h6>
-      
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!">Munnar Tourism</a>
-                </li>
-                <li>
-                  <a href="#!">Kovalam Tourism</a>
-                </li>
-                <li>
-                  <a href="#!">Wayanad Tourism</a>
-                </li>
-                <li>
-                  <a href="#!">Periyar Tourism</a>
-                </li>
-              </ul>
-      
-            </div>
-            <!-- Grid column -->
-      
-            <hr class="clearfix w-100 d-md-none">
-      
-            <!-- Grid column -->
-            <div class="col-md-2 mx-auto">
-      
-              <!-- Links -->
-              <h6 class="font-weight-bold text-uppercase mt-3 mb-4">Top Things to Do in Kerala</h6>
-      
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!">Yoga & Ayurveda</a>
-                </li>
-                <li>
-                  <a href="#!">Houseboat Cruise</a>
-                </li>
-                <li>
-                  <a href="#!">Village Tourism</a>
-                </li>
-                <li>
-                  <a href="#!">Cultural Performances</a>
-                </li>
-              </ul>
-      
-            </div>
-            <!-- Grid column -->
-      
-            <hr class="clearfix w-100 d-md-none">
-      
-            <!-- Grid column -->
-            <div class="col-md-2 mx-auto">
-      
-              <!-- Links -->
-              <h6 class="font-weight-bold text-uppercase mt-3 mb-4">Kerala Attractions</h6>
-      
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!">Kerala Folk Dance & Music</a>
-                </li>
-                <li>
-                  <a href="#!">Kerala Food</a>
-                </li>
-                <li>
-                  <a href="#!">Kerala Festivals</a>
-                </li>
-                <li>
-                  <a href="#!">People & Culture of Kerala</a>
-                </li>
-              </ul>
-      
-            </div>
-            <!-- Grid column -->
-      
-          </div>
-          <!-- Grid row -->
-      
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-4 mx-auto">
+  
+          <!-- Content -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Kerala Tourism</h5>
+          <p>A Welcoming Destination Where Nature, Beaches, Backwaters, Ayurveda, and Culture Await You.</p>
         </div>
-        <!-- Footer Links -->
-      
-        <hr>
-      
-        <!-- Call to action -->
-        <ul class="list-unstyled list-inline text-center py-2">
-          <li class="list-inline-item">
-            <h5 class="mb-1">Register for free</h5>
-          </li>
-          <li class="list-inline-item">
-            <a href="signup.html" class="btn btn-danger btn-rounded">Sign up!</a>
-          </li>
-        </ul>
-        <!-- Call to action -->
-      
-        <hr>
-      
-        <!-- Social buttons -->
-  <ul class="list-unstyled list-inline text-center">
-    <li class="list-inline-item">
-     
-        <a href="https://www.facebook.com/keralatourismofficial" class="fa fa-facebook"></a>
-      
-    </li>
-    <li class="list-inline-item">
-     
-        <a href="https://twitter.com/keralatourism" class="fa fa-twitter"></a>
-    
-    </li>
-    <li class="list-inline-item">
-        <a href="https://www.instagram.com/keralatourism/?hl=en" class="fa fa-instagram"></a>
-      
-    </li>
-    <li class="list-inline-item">
-     
-        <a href="https://www.linkedin.com/company/keralatourism/" class="fa fa-linkedin"></a>
-      
-    </li>
-    <li class="list-inline-item">
-    
-        <a href="https://www.youtube.com/keralatourism" class="fa fa-youtube"></a>
-      
-    </li>
-    <li class="list-inline-item">
-    
-      <a href="https://in.pinterest.com/keralatourism/" class="fa fa-pinterest"></a>
-    
-  </li>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+  
+          <!-- Links -->
+          <h6 class="font-weight-bold text-uppercase mt-3 mb-4">Kerala Destinations</h6>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Munnar Tourism</a>
+            </li>
+            <li>
+              <a href="#!">Kovalam Tourism</a>
+            </li>
+            <li>
+              <a href="#!">Wayanad Tourism</a>
+            </li>
+            <li>
+              <a href="#!">Periyar Tourism</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+  
+          <!-- Links -->
+          <h6 class="font-weight-bold text-uppercase mt-3 mb-4">Top Things to Do in Kerala</h6>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Yoga & Ayurveda</a>
+            </li>
+            <li>
+              <a href="#!">Houseboat Cruise</a>
+            </li>
+            <li>
+              <a href="#!">Village Tourism</a>
+            </li>
+            <li>
+              <a href="#!">Cultural Performances</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+  
+          <!-- Links -->
+          <h6 class="font-weight-bold text-uppercase mt-3 mb-4">Kerala Attractions</h6>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Kerala Folk Dance & Music</a>
+            </li>
+            <li>
+              <a href="#!">Kerala Food</a>
+            </li>
+            <li>
+              <a href="#!">Kerala Festivals</a>
+            </li>
+            <li>
+              <a href="#!">People & Culture of Kerala</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+    <!-- Footer Links -->
+  
+    <hr>
+  
+    <!-- Call to action -->
+    <ul class="list-unstyled list-inline text-center py-2">
+      <li class="list-inline-item">
+        <h5 class="mb-1">Register for free</h5>
+      </li>
+      <li class="list-inline-item">
+        <a href="signup.html" class="btn btn-danger btn-rounded">Sign up!</a>
+      </li>
+    </ul>
+    <!-- Call to action -->
+  
+    <hr>
+  
+    <!-- Social buttons -->
+<ul class="list-unstyled list-inline text-center">
+<li class="list-inline-item">
  
-   
-  </ul>
-  <!-- Social buttons -->
+    <a href="https://www.facebook.com/keralatourismofficial" class="fa fa-facebook"></a>
+  
+</li>
+<li class="list-inline-item">
+ 
+    <a href="https://twitter.com/keralatourism" class="fa fa-twitter"></a>
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-1">Toll free No: 1-800-425-4747 (Within India only)
-    Department of Tourism, Government of Kerala, Park View, Thiruvananthapuram, Kerala, India - 695 033</div>
-    <div class="footer-copyright text-center py-1">  Phone: +91 471 2321132, Fax: +91 471 2322279, E-mail: info@keralatourism.org.</div>
-  <div class="footer-copyright text-center py-1">All rights reserved © Kerala Tourism 2022.
-    Developed & Maintained by<a href="https://tiyamartin.com/"> Tiya Martin</a>
-  </div>
-  <!-- Copyright -->
+</li>
+<li class="list-inline-item">
+    <a href="https://www.instagram.com/keralatourism/?hl=en" class="fa fa-instagram"></a>
+  
+</li>
+<li class="list-inline-item">
+ 
+    <a href="https://www.linkedin.com/company/keralatourism/" class="fa fa-linkedin"></a>
+  
+</li>
+<li class="list-inline-item">
+
+    <a href="https://www.youtube.com/keralatourism" class="fa fa-youtube"></a>
+  
+</li>
+<li class="list-inline-item">
+
+  <a href="https://in.pinterest.com/keralatourism/" class="fa fa-pinterest"></a>
+
+</li>
+
+
+</ul>
+<!-- Social buttons -->
+
+<!-- Copyright -->
+<div class="footer-copyright text-center py-1">Toll free No: 1-800-425-4747 (Within India only)
+Department of Tourism, Government of Kerala, Park View, Thiruvananthapuram, Kerala, India - 695 033</div>
+<div class="footer-copyright text-center py-1">  Phone: +91 471 2321132, Fax: +91 471 2322279, E-mail: info@keralatourism.org.</div>
+<div class="footer-copyright text-center py-1">All rights reserved © Kerala Tourism 2022.
+Developed & Maintained by<a href="https://tiyamartin.com/"> Tiya Martin</a>
+</div>
+<!-- Copyright -->
 
 </footer>
-      <!--footer end-->
+  <!--footer end-->
+  <script src="JS/form.js"></script>
+</body>
+      
 </html> 
