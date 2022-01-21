@@ -19,30 +19,13 @@ let regemail= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\
 let regpwd= /^(?=.*[A-Z])(?=.*[!@#$&.*])(?=.*[0-9])(?=.*[a-z]).{8,}$/
 let regphone= /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
 let strengthBadge = document.getElementById('StrengthDisp');
-let strongPassword = /^'(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})'$/
-let mediumPassword = /^'((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))'$/
+let phonevalidate = /^(\d{10})|(\d{3}[ ]\d{3}[ ]\d{4})|(\d{3}[-]\d{3}[-]\d{4})|(\d{3}[.]\d{3}[.]\d{4})$/
 
+let strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?.&]{8,}$/
+let mediumPassword1 = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
 function validate_login(){
     
-// let regexp= /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/
 
-// if(regemail.test(email.value)){
-//     error_e.innerHTML="valid";
-//     error_e.style.color="green";
-//     if(regpwd.test(pwd.value)){
-//         error_p.innerHTML="valid";
-//         error_p.style.color="green";
-//         return true;
-//     }else{
-//         error_p.innerHTML="Invalid";
-//         error_p.style.color="red";
-//         return false;
-//     }
-//     }else{
-//         error_e.innerHTML="Invalid";
-//         error_e.style.color="red";
-//         return false;
-//     }
 
     if(email.value==""){
         error_e.innerHTML="Please enter your email id";
@@ -63,6 +46,7 @@ function validate_login(){
         error_p.style.color="red";
         return false;
     }else{
+        
         return true;
          }
 
@@ -83,7 +67,7 @@ if(username.value==""){
     error_ph.innerHTML="Please enter your phone number";
     error_ph.style.color="red";
     return false;
-}else if(!regphone.test(phno.value)){
+}else if(!phonevalidate.test(phno.value)){
     error_n.innerHTML="";
     error_ph.innerHTML="Please enter your 10 digits phone number";
     error_ph.style.color="red";
@@ -98,31 +82,16 @@ if(username.value==""){
     error_e.innerHTML="Please enter valid email id";
     error_e.style.color="red";
     return false;
-}else if(pwd.value==""){
+}else if(pwd.value.length == 0){
     error_e.innerHTML="";
-    error_p.innerHTML="Please enter your password";
+    error_p.innerHTML = 'Please enter your password';
     error_p.style.color="red";
     return false;
-}else if(!regpwd.test(pwd.value)){
-    error_e.innerHTML="";
-    error_p.innerHTML="Password should be of minimum 8 characters, atleast one uppercase and one lowercase, must contain at least one number";
-    error_p.style.color="red";
-    return false;
-}   
-// }else if(!strongPassword.test(pwd.value)|| !mediumPassword.test(pwd.value)) {
-//     strengthBadge.style.backgroundColor = 'red';
-//     strengthBadge.textContent = 'Weak';
-//     return false;
-// } else if(mediumPassword.test(pwd.value)) {
-//     strengthBadge.style.backgroundColor = 'blue';
-//     strengthBadge.textContent = 'Medium';
-//     return false;
-// } else if(strongPassword.test(pwd.value){
-//     strengthBadge.style.backgroundColor = "green";
-//     strengthBadge.textContent = 'Strong';
-// }
-else if(repeatpwd.value==""){
-    error_p.innerHTML="";
+}else if(!strongPassword.test(pwd.value)) {
+    error_p.innerHTML = '<span style="color:red">Weak Password!</span>';
+    return false;    
+}else if(repeatpwd.value==""){
+    error_p.innerHTML='<span style="color:green">Strong Password!</span>';
     error_rp.innerHTML="Please confirm your passwords";
     error_rp.style.color="red";
     return false;
@@ -131,9 +100,9 @@ else if(repeatpwd.value==""){
     error_rp.innerHTML="Password not matched";
     error_rp.style.color="red";
     return false;
-}else if(!checkbox.checked){
-    console.log(checkbox);
-    alert("not checked");
+// }else if(!checkbox.checked){
+//     console.log(checkbox);
+//     alert("not checked");
 }else{
     alert(""+username.value+" registered successfully!!!")
     return true;
