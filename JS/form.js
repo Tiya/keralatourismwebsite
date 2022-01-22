@@ -22,7 +22,7 @@ let strengthBadge = document.getElementById('StrengthDisp');
 let phonevalidate = /^(\d{10})|(\d{3}[ ]\d{3}[ ]\d{4})|(\d{3}[-]\d{3}[-]\d{4})|(\d{3}[.]\d{3}[.]\d{4})$/
 
 let strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?.&]{8,}$/
-let mediumPassword1 = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
+let mediumPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?.&]{7,}$/
 function validate_login(){
     
 
@@ -73,30 +73,40 @@ if(username.value==""){
     error_ph.style.color="red";
     return false;
 }else if(email.value==""){
+    error_n.innerHTML="";
     error_ph.innerHTML="";
     error_e.innerHTML="Please enter your email id";
     error_e.style.color="red";
     return false;
 }else if(!regemail.test(email.value)){
+    error_n.innerHTML="";
     error_ph.innerHTML="";
     error_e.innerHTML="Please enter valid email id";
     error_e.style.color="red";
     return false;
 }else if(pwd.value.length == 0){
+    error_n.innerHTML="";
     error_e.innerHTML="";
+    error_ph.innerHTML="";
     error_p.innerHTML = 'Please enter your password';
     error_p.style.color="red";
     return false;
 }else if(!strongPassword.test(pwd.value)) {
+    error_n.innerHTML="";
+    error_ph.innerHTML="";
     error_p.innerHTML = '<span style="color:red">Weak Password!</span>';
     return false;    
 }else if(repeatpwd.value==""){
+    error_n.innerHTML="";
+    error_ph.innerHTML="";
     error_p.innerHTML='<span style="color:green">Strong Password!</span>';
     error_rp.innerHTML="Please confirm your passwords";
     error_rp.style.color="red";
     return false;
 }else if(repeatpwd.value!=pwd.value){
+    error_n.innerHTML="";
     error_p.innerHTML="";
+    error_ph.innerHTML="";
     error_rp.innerHTML="Password not matched";
     error_rp.style.color="red";
     return false;
