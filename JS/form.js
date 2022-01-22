@@ -22,7 +22,7 @@ let strengthBadge = document.getElementById('StrengthDisp');
 let phonevalidate = /^(\d{10})|(\d{3}[ ]\d{3}[ ]\d{4})|(\d{3}[-]\d{3}[-]\d{4})|(\d{3}[.]\d{3}[.]\d{4})$/
 
 let strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?.&]{8,}$/
-let mediumPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?.&]{7,}$/
+let mediumPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?.&]{5,7}$/
 
 function validate_login(){
     
