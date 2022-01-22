@@ -23,10 +23,9 @@ let phonevalidate = /^(\d{10})|(\d{3}[ ]\d{3}[ ]\d{4})|(\d{3}[-]\d{3}[-]\d{4})|(
 
 let strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?.&]{8,}$/
 let mediumPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?.&]{7,}$/
+
 function validate_login(){
     
-
-
     if(email.value==""){
         error_e.innerHTML="Please enter your email id";
         error_e.style.color="red";
@@ -94,19 +93,30 @@ if(username.value==""){
 }else if(!strongPassword.test(pwd.value)) {
     error_n.innerHTML="";
     error_ph.innerHTML="";
-    error_p.innerHTML = '<span style="color:red">Weak Password!</span>';
+    error_p.innerHTML = "strong password should contain atleast 8 digits, one uppercase, one lower case and one special character";
+    error_p.style.color="red";
+    strengthBadge.innerHTML='<span style="color:red">Weak Password!</span>';
+
+    if(mediumPassword.test(pwd.value))
+    {
+        error_p.innerHTML = "strong password should contain atleast 8 digits, one uppercase, one lower case and one special character";
+        strengthBadge.innerHTML='<span style="color:orange">Medium Password!</span>';
+    }
     return false;    
 }else if(repeatpwd.value==""){
+    strengthBadge.innerHTML='<span style="color:green">Strong Password!</span>';
     error_n.innerHTML="";
     error_ph.innerHTML="";
-    error_p.innerHTML='<span style="color:green">Strong Password!</span>';
+    error_p.innerHTML="";
     error_rp.innerHTML="Please confirm your passwords";
     error_rp.style.color="red";
+    
     return false;
 }else if(repeatpwd.value!=pwd.value){
     error_n.innerHTML="";
     error_p.innerHTML="";
     error_ph.innerHTML="";
+    strengthBadge.innerHTML='<span style="color:green">Strong Password!</span>';
     error_rp.innerHTML="Password not matched";
     error_rp.style.color="red";
     return false;
@@ -114,6 +124,10 @@ if(username.value==""){
 //     console.log(checkbox);
 //     alert("not checked");
 }else{
+    error_n.innerHTML="";
+    error_p.innerHTML="";
+    error_ph.innerHTML="";
+    error_rp.innerHTML="";
     alert(""+username.value+" registered successfully!!!")
     return true;
 }
